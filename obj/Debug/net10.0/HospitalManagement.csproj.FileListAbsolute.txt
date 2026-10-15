@@ -95,3 +95,4 @@ C:\Users\MAITRI\OneDrive\Desktop\C# Project 202406101410041\HospitalManagement\o
 C:\Users\MAITRI\OneDrive\Desktop\C# Project 202406101410041\HospitalManagement\obj\Debug\net10.0\HospitalManagement.pdb
 C:\Users\MAITRI\OneDrive\Desktop\C# Project 202406101410041\HospitalManagement\obj\Debug\net10.0\HospitalManagement.genruntimeconfig.cache
 C:\Users\MAITRI\OneDrive\Desktop\C# Project 202406101410041\HospitalManagement\obj\Debug\net10.0\ref\HospitalManagement.dll
+C:\Users\MAITRI\OneDrive\Desktop\C# Project 202406101410041\HospitalManagement\obj\Debug\net10.0\HospitalManagement.sourcelink.json
