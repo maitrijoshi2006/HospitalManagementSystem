@@ -1,0 +1,53 @@
+@model List<DoctorAppointment.Controllers.Post>
+
+@{
+    ViewData["Title"] = "Posts";
+}
+
+<div class="container mt-4">
+
+    <h1 class="text-primary">
+        Posts from JSONPlaceholder
+    </h1>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>Post ID</th>
+                <th>Title</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (var post in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @post.Id
+                        </td>
+
+                        <td>
+                            @post.Title
+                        </td>
+
+                    </tr>
+                }
+            }
+
+        </tbody>
+
+    </table>
+
+    <a href="/Doctor/Index"
+       class="btn btn-secondary">
+        Back to Doctors
+    </a>
+
+</div>

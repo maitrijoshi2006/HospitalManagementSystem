@@ -1,0 +1,138 @@
+@model DoctorAppointment.Models.Doctor
+
+@using DoctorAppointment.Extensions
+
+@{
+    ViewData["Title"] = "Appointment";
+}
+
+<div class="container mt-4">
+
+    <h1 class="text-primary">
+        Patient Appointment
+    </h1>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.Message
+        </div>
+
+        <div class="alert alert-info">
+            Total Consultation Charge:
+            <strong>₹@ViewBag.TotalCharge</strong>
+        </div>
+    }
+
+    <form method="post"
+          action="/Doctor/Appointment">
+
+        <!-- Hidden Field -->
+        <input type="hidden"
+               name="DoctorId"
+               value="@Model.DoctorId" />
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Patient Name
+            </label>
+
+            <input type="text"
+                   name="PatientName"
+                   class="form-control"
+                   value="@ViewBag.PatientName"
+                   required />
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Doctor
+            </label>
+
+            <input type="text"
+                   class="form-control"
+                   value="@Model.DoctorName"
+                   readonly />
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Specialization
+            </label>
+
+            <select name="Specialization"
+                    class="form-control"
+                    required>
+
+                <option value="">
+                    Select Specialization
+                </option>
+
+                <option value="Cardiologist">
+                    Cardiologist
+                </option>
+
+                <option value="Dermatologist">
+                    Dermatologist
+                </option>
+
+                <option value="Neurologist">
+                    Neurologist
+                </option>
+
+                <option value="Pediatrician">
+                    Pediatrician
+                </option>
+
+                <option value="Orthopedic">
+                    Orthopedic
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Consultation Fee
+            </label>
+
+            <input type="text"
+                   class="form-control"
+                   value="₹@Model.ConsultationFee"
+                   readonly />
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Total Charge
+            </label>
+
+            <input type="text"
+                   class="form-control"
+                   value="₹@Model.CalculateTotalCharge()"
+                   readonly />
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Submit Appointment
+        </button>
+
+        <a href="/Doctor/Index"
+           class="btn btn-secondary">
+            Back
+        </a>
+
+    </form>
+
+</div>

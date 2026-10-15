@@ -1,0 +1,65 @@
+@model DoctorAppointment.Models.Doctor
+
+@using DoctorAppointment.Extensions
+
+@{
+    ViewData["Title"] = "Doctor Details";
+}
+
+<div class="container mt-4">
+
+    <h1 class="text-primary">Doctor Details</h1>
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <h3>@Model.DoctorName</h3>
+
+            <hr />
+
+            <p>
+                <strong>Doctor ID:</strong>
+                @Model.DoctorId
+            </p>
+
+            <p>
+                <strong>Specialization:</strong>
+                @Model.Specialization
+            </p>
+
+            <p>
+                <strong>Experience:</strong>
+                @Model.Experience years
+            </p>
+
+            <p>
+                <strong>Consultation Fee:</strong>
+                ₹@Model.ConsultationFee
+            </p>
+
+            <p>
+                <strong>Service Charge:</strong>
+                ₹100
+            </p>
+
+            <p class="text-success">
+                <strong>Total Charge:</strong>
+                ₹@Model.CalculateTotalCharge()
+            </p>
+
+            <a href="/Doctor/Appointment?doctorId=@Model.DoctorId"
+               class="btn btn-success">
+                Book Appointment
+            </a>
+
+            <a href="/Doctor/Index"
+               class="btn btn-secondary">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
